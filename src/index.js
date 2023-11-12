@@ -5,6 +5,7 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
+import userRouter from './routes/userRoutes.js';
 
 // 1. Iniciar la aplicación
 const app = express();
@@ -23,6 +24,7 @@ app.use(cors()) // cross-origin-resource-sharing
 app.use(express.json()); // El body llega como undefined si no agregamos esto
 
 // 4. Configurar las rutas
+app.use(userRouter);
 
 
 // 5. Iniciar el loop del servidor
